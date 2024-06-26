@@ -27,8 +27,9 @@ const Total = ({total}) => {
 }
 
 const App = () => {
-  const course =  'Half Stack application development'
-  const parts = [
+  const course = {
+    title: 'Half Stack application development',
+    parts: [
       {
         name: 'Fundamentals of React',
         exercises: 10
@@ -42,20 +43,18 @@ const App = () => {
         exercises: 14
       }
     ]
+  }
   
-  
-  const totExercises = parts.reduce((total, part) => total + part.exercises, 0);
+  const totExercises = course.parts.reduce((total, part) => total + part.exercises, 0);
 
   return (
     <div>
-      <Header title={course} />
+      <Header title={course.title} />
       <p><b>Table of contents:</b></p>
-      <Content parts={parts} />
+      <Content parts={course.parts} />
       <Total total={totExercises} />
     </div>
   )
 }
 
 export default App
-
-
