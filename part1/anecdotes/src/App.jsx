@@ -53,9 +53,12 @@ const App = () => {
   return (
     <>
     <Header title='An anecdote a day, takes the pain away' />
-    <h3 style={{padding:10, marginLeft:20, marginRight:200}}>"{anecdotes[anec]}"</h3>
+    <div style={{height:70, marginBottom:5}}>
+      <h3 style={{padding:10, marginLeft:20, marginRight:200}}>"{anecdotes[anec]}"</h3>
 
+    </div>
     <p style={{marginLeft:10}}>This quote has {favs[anec]} votes.</p>
+
     <Button onClick={voting} label='Vote for this anecdote'/>
     <Button onClick={nextAnecdote} label='Next anecdote' />
    
