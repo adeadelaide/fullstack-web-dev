@@ -1,34 +1,54 @@
 import Course from "./component/Course";
-
 const App = () => {
-
   const courses = [
     {
+      name: "Half Stack application development",
       id: 1,
-      title: 'Half Stack application development',
       parts: [
-        { id: 1, topic: 'Fundamentals of React', numExcercises: 10 },
-        { id: 2, topic: 'Using props to pass data', numExcercises: 7 },
-        { id: 3, topic: 'State of a component', numExcercises: 14 },
-        { id: 4, topic: 'Redux', numExcercises: 11 },
-      ]
+        {
+          name: "Fundamentals of React",
+          exercises: 10,
+          id: 1,
+        },
+        {
+          name: "Using props to pass data",
+          exercises: 7,
+          id: 2,
+        },
+        {
+          name: "State of a component",
+          exercises: 14,
+          id: 3,
+        },
+        {
+          name: "Redux",
+          exercises: 11,
+          id: 4,
+        },
+      ],
     },
     {
+      name: "Node.js",
       id: 2,
-      title: 'Node.js',
       parts: [
-        { id: 1, topic: 'Routing', numExcercises: 3 },
-        { id: 2, topic: 'Middlewares', numExcercises: 7 },
-      ]
-    }
+        {
+          name: "Routing",
+          exercises: 3,
+          id: 1,
+        },
+        {
+          name: "Middlewares",
+          exercises: 7,
+          id: 2,
+        },
+      ],
+    },
   ];
 
   return (
     <div>
-      <h1>Web Development Curriculum</h1>
-      
-      {courses.map(course => (
-        <Course key={course.id} course={course} />
+      {courses.map((course) => (
+        <Course course={course} key={course.id} />
       ))}
     </div>
   );
